@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
             --text-color: #333333;
             --bg-color: #ffffff;
         }
+
         @media (prefers-color-scheme: dark) {
             :root {
                 --primary-color: #64B5F6;
@@ -19,6 +21,7 @@
                 --bg-color: #121212;
             }
         }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
             line-height: 1.6;
@@ -28,77 +31,143 @@
             margin: 0 auto;
             padding: 24px;
         }
+
         h1 {
             color: var(--text-color);
             border-bottom: 2px solid var(--primary-color);
             padding-bottom: 12px;
             margin-bottom: 32px;
         }
+
         h4 {
             color: var(--primary-color);
             font-size: 1.25rem;
             margin-top: 32px;
             margin-bottom: 12px;
         }
+
         p {
             margin-bottom: 16px;
         }
+
         ul {
             padding-left: 24px;
             margin-bottom: 16px;
         }
+
         li {
             margin-bottom: 8px;
         }
+
         a {
             color: var(--link-color);
             text-decoration: none;
             font-weight: 500;
         }
+
         a:hover {
             text-decoration: underline;
         }
-        /* Replicating the exact content structure from the app */
+
+        .last-updated {
+            color: #888;
+            font-size: 0.9rem;
+            margin-top: -24px;
+            margin-bottom: 32px;
+        }
     </style>
 </head>
+
 <body>
     <h1>Privacy Policy</h1>
-    <p>Welcome to <strong>Netspeed Lite</strong>. We respect your privacy and are committed to protecting it. This policy explains what data our app accesses and how it is used.</p>
-    
+    <p class="last-updated">Last Updated: February 19, 2026</p>
+    <p>Welcome to <strong>Netspeed Lite</strong>. We respect your privacy and are committed to protecting it. This
+        policy explains what data our app accesses and how it is used.</p>
+
     <h4 style="color:var(--primary-color)">1. Data Collection &amp; Usage</h4>
     <ul>
-        <li><strong>No Personal Data:</strong> We do not collect, store, or share any personally identifiable information (PII), browsing history, or IP addresses.</li>
-        <li><strong>Network Usage Stats:</strong> We use the <em>Usage Access</em> permission solely to read your device's historical network traffic logs. This processing happens 100% locally on your device.</li>
-        <li><strong>Local Storage:</strong> Your preferences (theme, data limits) and manually tracked data counters are stored locally using Android SharedPreferences. This data never leaves your device and is automatically deleted if you uninstall the app.</li>
+        <li><strong>No Personal Data:</strong> We (the developer) do not collect, store, or share any personally
+            identifiable information (PII), browsing history, or IP addresses.</li>
+        <li><strong>Network Usage Stats:</strong> We use the <em>Usage Access</em> permission solely to read your
+            device's historical network traffic logs. This processing happens 100% locally on your device.</li>
+        <li><strong>Per-App Data Usage:</strong> We resolve installed app names and icons locally on your device to
+            display per-app data consumption. No app list or usage data is transmitted externally.</li>
+        <li><strong>Local Storage:</strong> Your preferences (theme, icon style, notification theme, dynamic color
+            settings, data limits) and manually tracked data counters are stored locally using Android
+            SharedPreferences. This data never leaves your device.</li>
+        <li><strong>Advertising ID:</strong> We access the Google Advertising ID to serve personalized ads via Google
+            AdMob. This identifier may be reset or opted out of by you at any time in your device's settings.</li>
     </ul>
+
     <h4 style="color:var(--primary-color)">2. Permissions</h4>
     <p>This app requires the following permissions to function:</p>
     <ul>
-        <li><strong>INTERNET:</strong> Required for the speed meter to measure your active network throughput.</li>
-        <li><strong>ACCESS_NETWORK_STATE:</strong> Required to detect whether you are connected to mobile data or Wi-Fi.</li>
-        <li><strong>ACCESS_WIFI_STATE:</strong> Required to read your Wi-Fi signal strength for the optional Wi-Fi indicator feature.</li>
-        <li><strong>ACCESS_FINE_LOCATION / ACCESS_COARSE_LOCATION:</strong> Required by the Android system to read Wi-Fi signal strength (RSSI). We use this <strong>strictly</strong> for signal strength and do <strong>not</strong> collect or track your physical location/GPS coordinates.</li>
-        <li><strong>FOREGROUND_SERVICE / FOREGROUND_SERVICE_SPECIAL_USE:</strong> Required to keep the speed meter running persistently in the status bar notification.</li>
-        <li><strong>PACKAGE_USAGE_STATS (Usage Access):</strong> Required to display historical data usage (Today, Last 7 Days, This Month).</li>
-        <li><strong>POST_NOTIFICATIONS:</strong> Required to show the live speed indicator notification.</li>
-        <li><strong>RECEIVE_BOOT_COMPLETED:</strong> Required to automatically restart the speed meter after device reboot (if enabled in settings).</li>
-        <li><strong>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS:</strong> Optionally requested to ensure the speed meter runs reliably without being killed by the system.</li>
+        <li><strong>INTERNET:</strong> Required for the speed meter to measure active network throughput and to serve
+            advertisements.</li>
+        <li><strong>ACCESS_NETWORK_STATE &amp; ACCESS_WIFI_STATE:</strong> Required to detect connection type
+            (Wi-Fi/Mobile) and Wi-Fi signal strength.</li>
+        <li><strong>ACCESS_FINE_LOCATION / ACCESS_COARSE_LOCATION:</strong> Required by Android to read Wi-Fi signal
+            strength (RSSI). We use this <strong>strictly</strong> for signal strength and do <strong>not</strong>
+            collect or track your location.</li>
+        <li><strong>FOREGROUND_SERVICE_SPECIAL_USE:</strong> Required to keep the speed meter running persistently in
+            the status bar notification.</li>
+        <li><strong>PACKAGE_USAGE_STATS (Usage Access):</strong> Required to display historical data usage.</li>
+        <li><strong>QUERY_ALL_PACKAGES:</strong> Required to resolve app names/icons in the Data Usage screen.</li>
+        <li><strong>POST_NOTIFICATIONS:</strong> Required to show the live speed indicator and data alerts.</li>
+        <li><strong>BILLING:</strong> Required for in-app purchases.</li>
+        <li><strong>AD_ID:</strong> Required for advertising.</li>
     </ul>
-    <h4 style="color:var(--primary-color)">3. Third-Party Services</h4>
+
+    <h4 style="color:var(--primary-color)">3. Restricted Permissions Disclosure</h4>
+    <p><strong>Usage Access &amp; Query All Packages:</strong> Netspeed Lite uses the <em>Usage Access</em> and
+        <em>Query All Packages</em> permissions exclusively to provide the core functionality of real-time internet
+        speed monitoring and per-app data usage tracking. This data is processed locally on your device and is
+        <strong>never</strong> transmitted to our servers or third parties.</p>
+
+    <h4 style="color:var(--primary-color)">4. Third-Party Services</h4>
+    <p>We use the following third-party services which may collect data as described below:</p>
     <ul>
-        <li><strong>Google Play In-App Review API:</strong> We may use the Google Play In-App Review API to prompt you for a rating. This SDK is provided by Google and may send anonymized identifiers to Google. No personal data is shared by us. Please refer to <a href="https://policies.google.com/privacy">Google's Privacy Policy</a> for details.</li>
+        <li><strong>Google AdMob:</strong> Collects user identifiers (Advertising ID), IP address, and <strong>app
+                performance data (crash logs, diagnostics)</strong> to serve ads, prevent fraud, and ensure stability.
+            <a href="https://policies.google.com/technologies/ads">Privacy Policy</a>.</li>
+        <li><strong>Google Play Billing:</strong> Processes payments securely. We do not access your financial data. <a
+                href="https://policies.google.com/privacy">Privacy Policy</a>.</li>
+        <li><strong>Google Play In-App Review API:</strong> We may use the Google Play In-App Review API to prompt you
+            for a rating. This SDK is provided by Google and may send anonymized identifiers to Google. No personal data
+            is shared by us.</li>
     </ul>
-    <h4 style="color:var(--primary-color)">4. Data Retention</h4>
-    <p>All data is stored locally on your device. We do not retain any data on external servers. Your preferences and usage history are automatically deleted when you uninstall the app.</p>
-    <h4 style="color:var(--primary-color)">5. Children's Privacy</h4>
-    <p>Netspeed Lite is not directed at children under the age of 13. We do not knowingly collect any information from children. If you believe a child has provided us with personal information, please contact us so we can take corrective action.</p>
-    <h4 style="color:var(--primary-color)">6. Your Rights (GDPR/CCPA)</h4>
-    <p>Since no personal data is collected or transmitted by Netspeed Lite, there is no personal data for us to access, modify, or delete on our end. All data resides solely on your device, giving you full control. You can clear app data or uninstall the app at any time to remove all stored information.</p>
-    <h4 style="color:var(--primary-color)">7. Disclaimer</h4>
-    <p><strong>Netspeed Lite</strong> is provided "AS IS". The data usage statistics provided by this app are estimates based on your device's internal logs and interpolation algorithms. These figures may differ from your mobile carrier's official billing records. We do not guarantee 100% accuracy and are not liable for any data overage charges incurred.</p>
-    <h4 style="color:var(--primary-color)">8. Changes to This Policy</h4>
-    <p>We may update this Privacy Policy from time to time. Any changes will be reflected with a new "Last Updated" date within the app. Continued use of the app after changes constitutes acceptance of the revised policy.</p>
-    <h4 style="color:var(--primary-color)">9. Contact Us</h4>
-    <p>If you have questions about this policy, please contact us at <a href="mailto:contact.krishna.apps@gmail.com"><b><font color="#03A9F4">contact.krishna.apps@gmail.com</font></b></a>.</p>
+
+    <h4 style="color:var(--primary-color)">5. In-App Purchases &amp; Premium</h4>
+    <p>Netspeed Lite offers optional premium features (custom icon styles, dynamic speed-based notification colors,
+        notification themes, and an ad-free experience) available through a monthly subscription or a one-time lifetime
+        purchase. Watching a rewarded ad also grants temporary premium access. Purchase status and temporary access
+        expiry are stored locally on your device. All billing is processed securely through Google Play.</p>
+
+    <h4 style="color:var(--primary-color)">6. Data Retention &amp; Security</h4>
+    <p>All app data is stored locally. We use no external servers. Data sent to third-party services (AdMob/Google Play)
+        is encrypted in transit.</p>
+
+    <h4 style="color:var(--primary-color)">7. Children's Privacy</h4>
+    <p>This app is not directed at children under 13. We do not knowingly collect personal info from children.</p>
+
+    <h4 style="color:var(--primary-color)">8. Your Rights</h4>
+    <p>You have full control over your local data by clearing app storage. For third-party ad data, you can opt out of
+        personalized advertising in your device settings.</p>
+
+    <h4 style="color:var(--primary-color)">9. Disclaimer</h4>
+    <p><strong>Netspeed Lite</strong> is provided "AS IS". The data usage statistics provided by this app are estimates
+        based on your device's internal logs and interpolation algorithms. These figures may differ from your mobile
+        carrier's official billing records. We do not guarantee 100% accuracy and are not liable for any data overage
+        charges incurred.</p>
+
+    <h4 style="color:var(--primary-color)">10. Changes to This Policy</h4>
+    <p>We may update this Privacy Policy from time to time. Any changes will be reflected with a new "Last Updated" date
+        within the app. Continued use of the app after changes constitutes acceptance of the revised policy.</p>
+
+    <h4 style="color:var(--primary-color)">11. Contact Us</h4>
+    <p>If you have questions about this policy, please contact us at <a href="mailto:contact.krishna.apps@gmail.com"><b>
+                <font color="#03A9F4">contact.krishna.apps@gmail.com</font>
+            </b></a>.</p>
 </body>
+
 </html>
