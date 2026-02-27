@@ -80,7 +80,7 @@
 
 <body>
     <h1>Privacy Policy</h1>
-    <p class="last-updated">Last Updated: February 24, 2026</p>
+    <p class="last-updated">Last Updated: February 27, 2026</p>
     <p>Welcome to <strong>Netspeed Lite</strong>. We respect your privacy and are committed to protecting it. This
         policy explains what data our app accesses and how it is used.</p>
 
@@ -92,8 +92,7 @@
             device's historical network traffic logs. This processing happens 100% locally on your device.</li>
         <li><strong>Per-App Data Usage:</strong> We resolve installed app names and icons locally on your device to
             display per-app data consumption. No app list or usage data is transmitted externally.</li>
-        <li><strong>Local Storage:</strong> Your preferences (theme, icon style, notification theme, dynamic color
-            settings, data limits) and manually tracked data counters are stored locally using Android
+        <li><strong>Local Storage:</strong> Your preferences (theme, icon style, notification theme, notification priority, overlay settings such as size, opacity, color, and dynamic color thresholds, data limits) and manually tracked data counters are stored locally using Android
             SharedPreferences. This data never leaves your device.</li>
         <li><strong>Advertising ID:</strong> We access the Google Advertising ID to serve personalized ads via Google
             AdMob. This identifier may be reset or opted out of by you at any time in your device's settings.</li>
@@ -111,16 +110,18 @@
             collect or track your location.</li>
         <li><strong>FOREGROUND_SERVICE_SPECIAL_USE:</strong> Required to keep the speed meter running persistently in
             the status bar notification.</li>
-        <li><strong>PACKAGE_USAGE_STATS (Usage Access):</strong> Required to display historical data usage.</li>
+        <li><strong>PACKAGE_USAGE_STATS (Usage Access):</strong> Required to display historical data usage and to identify the currently active app for the overlay bubble display.</li>
+        <li><strong>SYSTEM_ALERT_WINDOW (Display Over Other Apps):</strong> Required for the optional floating overlay bubble that shows real-time network speed on top of other applications. This permission is only requested when you enable the overlay feature in Settings.</li>
+        <li><strong>READ_PHONE_STATE / READ_BASIC_PHONE_STATE:</strong> Used solely to detect your mobile network generation (3G, 4G, 5G) for display in the overlay bubble. We do <strong>not</strong> read your phone number, call logs, or any other telephony data.</li>
         <li><strong>App Visibility:</strong> Required to resolve app names/icons in the Data Usage screen for installed user apps.</li>
-        <li><strong>POST_NOTIFICATIONS:</strong> Required to show the live speed indicator and data alerts.</li>
+        <li><strong>POST_NOTIFICATIONS:</strong> Required to show the live speed indicator and data alerts. The app supports both default and high-priority notification channels, configurable in Settings.</li>
         <li><strong>BILLING:</strong> Required for in-app purchases.</li>
         <li><strong>AD_ID:</strong> Required for advertising.</li>
     </ul>
 
     <h4 style="color:var(--primary-color)">3. Restricted Permissions Disclosure</h4>
     <p><strong>Usage Access:</strong> Netspeed Lite uses the <em>Usage Access</em> permission exclusively to provide the core functionality of real-time internet
-        speed monitoring and per-app data usage tracking. This data is processed locally on your device and is
+        speed monitoring, per-app data usage tracking, and identifying the foreground app for the overlay bubble display. This data is processed locally on your device and is
         <strong>never</strong> transmitted to our servers or third parties.</p>
 
     <h4 style="color:var(--primary-color)">4. Third-Party Services &amp; Advertising</h4>
@@ -144,32 +145,38 @@
 
     <h4 style="color:var(--primary-color)">6. In-App Purchases &amp; Premium</h4>
     <p>Netspeed Lite offers optional premium features (custom icon styles, dynamic speed-based notification colors,
-        notification themes, and an ad-free experience) available through a monthly subscription or a one-time lifetime
+        notification themes, overlay color customization, and an ad-free experience) available through a monthly subscription or a one-time lifetime
         purchase. Watching a rewarded ad also grants temporary premium access. Purchase status and temporary access
         expiry are stored locally on your device. All billing is processed securely through Google Play.</p>
 
-    <h4 style="color:var(--primary-color)">7. Data Retention &amp; Security</h4>
+    <h4 style="color:var(--primary-color)">7. Overlay Bubble Feature</h4>
+    <p>Netspeed Lite offers an optional floating overlay bubble that displays real-time network speed on top of other applications. Enabling this feature requires granting the "Display Over Other Apps" (<em>SYSTEM_ALERT_WINDOW</em>) permission. The overlay accesses network speed data processed locally and optionally identifies the foreground app using the <em>Usage Access</em> permission to display context-aware information. All overlay settings (size, opacity, color, position) are stored locally and never transmitted externally.</p>
+
+    <h4 style="color:var(--primary-color)">8. Notification Priority Feature</h4>
+    <p>The app allows you to toggle between a default and a high-priority notification channel for the speed indicator. Enabling the high-priority option makes the notification more prominent on your device. This preference is stored locally in SharedPreferences and only affects how notifications are displayed on your device.</p>
+
+    <h4 style="color:var(--primary-color)">9. Data Retention &amp; Security</h4>
     <p>All app data is stored locally. We use no external servers. Data sent to third-party services (AdMob/Google Play)
         is encrypted in transit.</p>
 
-    <h4 style="color:var(--primary-color)">7. Children's Privacy</h4>
+    <h4 style="color:var(--primary-color)">10. Children's Privacy</h4>
     <p>This app is not directed at children under 13. We do not knowingly collect personal info from children.</p>
 
-    <h4 style="color:var(--primary-color)">8. Your Rights</h4>
+    <h4 style="color:var(--primary-color)">11. Your Rights</h4>
     <p>You have full control over your local data by clearing app storage. For third-party ad data, you can opt out of
         personalized advertising in your device settings.</p>
 
-    <h4 style="color:var(--primary-color)">9. Disclaimer</h4>
+    <h4 style="color:var(--primary-color)">12. Disclaimer</h4>
     <p><strong>Netspeed Lite</strong> is provided "AS IS". The data usage statistics provided by this app are estimates
         based on your device's internal logs and interpolation algorithms. These figures may differ from your mobile
         carrier's official billing records. We do not guarantee 100% accuracy and are not liable for any data overage
         charges incurred.</p>
 
-    <h4 style="color:var(--primary-color)">10. Changes to This Policy</h4>
+    <h4 style="color:var(--primary-color)">13. Changes to This Policy</h4>
     <p>We may update this Privacy Policy from time to time. Any changes will be reflected with a new "Last Updated" date
         within the app. Continued use of the app after changes constitutes acceptance of the revised policy.</p>
 
-    <h4 style="color:var(--primary-color)">11. Contact Us</h4>
+    <h4 style="color:var(--primary-color)">14. Contact Us</h4>
     <p>Contact us at <a href="mailto:contact.krishna.apps@gmail.com"><b>
                 <font color="#03A9F4">contact.krishna.apps@gmail.com</font>
             </b></a>.</p>
